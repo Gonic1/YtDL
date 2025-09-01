@@ -1,0 +1,92 @@
+:root{
+--bg: #0b0d10;
+--card: #11151a;
+--muted: #8b98a5;
+--text: #e8edf2;
+--accent: #25f59b; /* fresh green vibe, reminiscent of Fizz/Public Mobile minimal palettes */
+--accent-ink: #022b1c;
+--ring: #2bffb0aa;
+--danger: #ff5c5c;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+margin:0; font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+background:linear-gradient(180deg,#0a0c0f, #0c0f13 30%, #0a0c0f 100%);
+color:var(--text);
+}
+a{color:var(--accent)}
+.wrap{max-width:980px;margin:0 auto;padding:28px 16px 64px}
+
+
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:28px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:36px;height:36px;border-radius:10px;background:radial-gradient(110% 110% at 20% 20%, var(--accent) 0%, #1de28e 30%, #0f1f18 70%); box-shadow:0 0 0 6px #25f59b12, 0 10px 30px #25f59b22}
+.brand h1{font-size:18px;margin:0;font-weight:700;letter-spacing:.3px}
+.tag{font-size:12px;color:var(--muted)}
+
+
+.card{background:var(--card);border:1px solid #1a222b;border-radius:16px; padding:18px; box-shadow: 0 8px 26px #00000055}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;align-items:stretch}
+@media (max-width: 880px){.hero{grid-template-columns:1fr}}
+
+
+.stack{display:flex;flex-direction:column;gap:14px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#0e1318;border:1px solid #182029;color:var(--muted);font-size:12px}
+
+
+.form-row{display:flex;gap:10px;align-items:center}
+.field{flex:1; position:relative}
+.label{display:block;font-size:12px;color:var(--muted);margin:0 0 6px 2px}
+.input{
+width:100%; padding:14px 14px; border-radius:12px; border:1px solid #1b232c; background:#0d1217; color:var(--text);
+outline:none; transition:border .15s, box-shadow .15s; font-size:15px
+}
+.input:focus{border-color:var(--accent); box-shadow:0 0 0 6px var(--ring)}
+
+
+.select{appearance:none; background:#0d1217 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%238b98a5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>') no-repeat right 12px center; background-size:18px; padding-right:40px}
+
+
+.btn{
+display:inline-flex;align-items:center;justify-content:center;gap:10px; padding:12px 16px; border-radius:12px; font-weight:600;
+border:1px solid #182029; background:linear-gradient(180deg,var(--accent),#19e28e); color:var(--accent-ink); cursor:pointer; box-shadow:0 10px 28px #25f59b44; transition:transform .06s ease;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(0)}
+.btn.secondary{background:#0f151b;color:var(--text); border:1px solid #1b242e; box-shadow:none}
+.btn.ghost{background:transparent;color:var(--muted); border:1px dashed #293341}
+
+
+.muted{color:var(--muted)}
+.tiny{font-size:12px}
+.legal{border-left:3px solid #21313a; padding-left:10px}
+
+
+.thumb{width:100%; height:100%; border-radius:12px; background: #0b1015; display:grid; place-items:center; overflow:hidden}
+.thumb svg{opacity:.8}
+
+
+.results{margin-top:18px; display:flex; flex-direction:column; gap:10px}
+.result-item{display:grid; grid-template-columns: 1fr auto; gap:12px; align-items:center; padding:12px; border:1px solid #1b232c; background:#0c1116; border-radius:12px}
+.badges{display:flex; gap:8px; flex-wrap:wrap}
+.badge{font-size:11px; padding:4px 8px; border-radius:999px; border:1px solid #20303a; color:#a7b3bf}
+.badge.accent{border-color:#164e3a; background:#0d1f18; color:#b7ffe0}
+
+
+.row{display:flex; gap:10px; flex-wrap:wrap}
+.grow{flex:1}
+
+
+.status{margin-top:10px; min-height:20px}
+.status[aria-busy="true"]::after{content:"Working…"}
+
+
+.details.dev{margin-top:16px}
+summary{cursor:pointer;color:var(--muted)}
+code, pre{background:#0b1116; border:1px solid #18222c; border-radius:8px; padding:.6em .8em; color:#d8e7f5}
+pre{overflow:auto}
+
+
+.toast{position:fixed; bottom:20px; left:50%; transform:translateX(-50%); background:#0d141a; border:1px solid #1d2833; padding:10px 14px; border-radius:10px; box-shadow:0 10px 30px #0008; display:none}
+.toast.show{display:block}
